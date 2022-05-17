@@ -27,6 +27,7 @@ services:
     volumes:
       - nextcloud:/var/www/html
       - data:/var/www/html/data
+      - peliculas:/opt/externo
     environment:
       - MYSQL_PASSWORD=admin
       - MYSQL_DATABASE=nextcloud
@@ -42,60 +43,8 @@ services:
       - JELLYFIN_PublishedServerUrl=192.168.1.155 #optional
     volumes:
       - config:/config
-      - tvshows:/data/tvshows
-      - nextcloud:/data/movies
-    ports:
-      - 8096:8096
-      - 8920:8920 #optional
-      - 7359:7359/udp #optional
-      - 1900:1900/udp #optional
-    restart: unless-stopped
-version: '2.1'
-
-volumes:
-  nextcloud:
-  db:
-
-services:
-  db:
-    image: yobasystems/alpine-mariadb:latest
-    restart: always
-    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
-    volumes:
-      - db:/var/lib/mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=admin
-      - MYSQL_PASSWORD=admin
-      - MYSQL_DATABASE=nextcloud
-      - MYSQL_USER=nextcloud
-
-  app:
-    image: nextcloud
-    restart: always
-    ports:
-      - 8080:80
-    links:
-      - db
-    volumes:
-      - nextcloud:/var/www/html
       - data:/var/www/html/data
-    environment:
-      - MYSQL_PASSWORD=admin
-      - MYSQL_DATABASE=nextcloud
-      - MYSQL_USER=nextcloud
-      - MYSQL_HOST=db
-  jellyfin:   
-    image: lscr.io/linuxserver/jellyfin
-    container_name: jellyfin
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/London
-      - JELLYFIN_PublishedServerUrl=192.168.1.155 #optional
-    volumes:
-      - config:/config
-      - tvshows:/data/tvshows
-      - nextcloud:/data/movies
+      - peliculas:/opt/externo
     ports:
       - 8096:8096
       - 8920:8920 #optional
