@@ -3,6 +3,10 @@ version: '2.1'
 volumes:
   nextcloud:
   db:
+  nextcloud:
+  peliculas:
+  data:
+  config:
 
 services:
   db:
@@ -27,7 +31,7 @@ services:
     volumes:
       - nextcloud:/var/www/html
       - data:/var/www/html/data
-      - peliculas:/opt/externo
+      - /media/disco/peliculas:/externo
     environment:
       - MYSQL_PASSWORD=admin
       - MYSQL_DATABASE=nextcloud
@@ -44,7 +48,7 @@ services:
     volumes:
       - config:/config
       - data:/var/www/html/data
-      - peliculas:/opt/externo
+      - /media/disco/peliculas:/externo
     ports:
       - 8096:8096
       - 8920:8920 #optional
