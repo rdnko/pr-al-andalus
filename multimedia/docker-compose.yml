@@ -21,8 +21,9 @@ services:
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
 
-  app:
+  nextcloud:
     image: nextcloud
+    container_name: proyecto-nc
     restart: always
     ports:
       - 8080:80
@@ -37,6 +38,9 @@ services:
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
       - MYSQL_HOST=db
+      - NEXTCLOUD_TRUSTED_DOMAINS=192.168.1.*
+      - NEXTCLOUD_ADMIN_USER=admin
+      - NEXTCLOUD_ADMIN_PASSWORD=admin
   jellyfin:   
     image: lscr.io/linuxserver/jellyfin
     container_name: jellyfin
