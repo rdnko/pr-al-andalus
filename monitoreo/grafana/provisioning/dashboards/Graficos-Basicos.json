@@ -91,8 +91,8 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 11,
-        "w": 16,
+        "h": 10,
+        "w": 17,
         "x": 0,
         "y": 0
       },
@@ -134,38 +134,7 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 10,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineStyle": {
-              "fill": "solid"
-            },
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "never",
-            "spanNulls": true,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "line"
-            }
+            "mode": "thresholds"
           },
           "mappings": [],
           "max": 1000000000,
@@ -188,25 +157,26 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 11,
-        "w": 8,
-        "x": 16,
+        "h": 10,
+        "w": 7,
+        "x": 17,
         "y": 0
       },
       "id": 30,
       "interval": "15s",
       "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom"
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
         },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "none"
-        }
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
       },
-      "pluginVersion": "8.5.2",
+      "pluginVersion": "8.5.5",
       "targets": [
         {
           "datasource": {
@@ -221,7 +191,7 @@
         }
       ],
       "title": "Uso de RAM",
-      "type": "timeseries"
+      "type": "gauge"
     },
     {
       "collapsed": false,
@@ -229,7 +199,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 11
+        "y": 10
       },
       "id": 23,
       "panels": [],
@@ -298,7 +268,7 @@
         "h": 9,
         "w": 17,
         "x": 0,
-        "y": 12
+        "y": 11
       },
       "id": 21,
       "options": {
@@ -362,7 +332,7 @@
         "h": 9,
         "w": 7,
         "x": 17,
-        "y": 12
+        "y": 11
       },
       "id": 27,
       "options": {
@@ -378,7 +348,7 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.5.2",
+      "pluginVersion": "8.5.5",
       "targets": [
         {
           "datasource": {
@@ -398,7 +368,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 21
+        "y": 20
       },
       "id": 18,
       "panels": [],
@@ -467,7 +437,7 @@
         "h": 9,
         "w": 17,
         "x": 0,
-        "y": 22
+        "y": 21
       },
       "id": 20,
       "options": {
@@ -531,7 +501,7 @@
         "h": 9,
         "w": 7,
         "x": 17,
-        "y": 22
+        "y": 21
       },
       "id": 25,
       "options": {
@@ -547,7 +517,7 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.5.2",
+      "pluginVersion": "8.5.5",
       "targets": [
         {
           "datasource": {
@@ -567,7 +537,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 31
+        "y": 30
       },
       "id": 16,
       "panels": [],
@@ -599,8 +569,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "#299c46",
-                "value": null
+                "color": "#299c46"
               },
               {
                 "color": "blue",
@@ -616,7 +585,7 @@
         "h": 9,
         "w": 6,
         "x": 0,
-        "y": 32
+        "y": 31
       },
       "id": 8,
       "links": [],
@@ -673,8 +642,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "blue",
@@ -690,7 +658,7 @@
         "h": 9,
         "w": 6,
         "x": 6,
-        "y": 32
+        "y": 31
       },
       "id": 10,
       "links": [],
@@ -748,8 +716,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -765,7 +732,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 32
+        "y": 31
       },
       "id": 12,
       "links": [],
@@ -842,8 +809,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -859,7 +825,7 @@
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 41
+        "y": 40
       },
       "id": 6,
       "links": [],
@@ -903,7 +869,8 @@
   "style": "dark",
   "tags": [
     "speedtest",
-    "ping"
+    "ping",
+    "sistema"
   ],
   "templating": {
     "list": []
@@ -938,7 +905,7 @@
     ]
   },
   "timezone": "browser",
-  "title": "Internet connection",
+  "title": "Gráficos Básicos",
   "uid": "o9mIe_Aik",
   "version": 1,
   "weekStart": ""
