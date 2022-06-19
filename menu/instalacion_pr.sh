@@ -74,17 +74,17 @@ multimedia_file="./docker-compose.yml"
 
 
 
-if [[ -f $multimedia_file_bak ]]; then
+if [[ -f "./docker-compose.yml.bak" ]]; then
 
 	echo -e "\nExiste el archivo de copia, lo recuperamos"
 
-	cp multimedia_file_bak multimedia_file
+	cp "./docker-compose.yml.bak" "./docker-compose.yml"
 
 else
 
 	echo -e "\nNo exsite el archivo de copia, lo creamos"
 
-	cp multimedia_file multimedia_file_bak
+	cp "./docker-compose.yml" "./docker-compose.yml.bak"
 
 fi
 
