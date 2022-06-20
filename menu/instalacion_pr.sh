@@ -69,10 +69,6 @@ mkdir jellyfin || echo -e "\nLa carpeta jellyfin ya existe"
 chown -R www-data:www-data nextcloud
 chown -R www-data:www-data jellyfin
 
-multimedia_file_bak="./docker-compose.yml.bak"
-multimedia_file="./docker-compose.yml"
-
-
 
 if [[ -f "./docker-compose.yml.bak" ]]; then
 

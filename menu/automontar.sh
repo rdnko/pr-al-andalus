@@ -13,8 +13,6 @@ establecer_tipo () {
 
 	m_type=$(sudo blkid -o value -s TYPE $1)
 	dispo_selec=$(sudo blkid -o device $1)
-
-	echo "$(dispo_selec)"
 	
 	echo ""
 
